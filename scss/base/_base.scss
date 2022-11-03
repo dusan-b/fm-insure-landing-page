@@ -28,7 +28,7 @@ button {
   padding: 0;
 }
 
-.sr-only {
+.visually-hidden {
   position: absolute;
   clip: rect(1px, 1px, 1px, 1px);
   padding: 0;
@@ -38,7 +38,7 @@ button {
   overflow: hidden;
 }
 
-/* .preview-site {
+.preview-site {
   position: absolute;
   width: 100%;
   height: 3000px;
@@ -47,4 +47,4 @@ button {
   z-index: 1;
   display: none;
   opacity: 0.3;
-} */
+}
