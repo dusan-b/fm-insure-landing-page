@@ -21,37 +21,41 @@
 
 <body>
 
-  <div class="preview-site"></div>
+  <div class="preview-design"></div>
 
   <div class="page">
 
     <!-- Header -->
     <header class="main-header">
-      <div class="container">
+      <div class="main-header-inner container">
         <h1>
           <a href="./" class="logo" aria-label="Insure landing page">
             <img src="./img/logo.svg" class="logo__img" alt="">
             <span class="visually-hidden">Insure</span>
           </a>
         </h1>
+
+        <!-- Main navigation -->
         <nav class="main-nav" aria-label="Main menu">
           <button class="main-nav__btn" aria-expanded="false" aria-controls="menu">
             <span class="visually-hidden">Open menu</span>
           </button>
-          <ul id="menu" class="main-nav__menu">
+          <ul id="menu" class="main-nav__menu ul-fix">
             <li><a class="main-nav__link" href="#0">How we work</a></li>
             <li><a class="main-nav__link" href="#0">Blog</a></li>
             <li><a class="main-nav__link" href="#0">Account</a></li>
             <li><a class="main-nav__link" href="#0">View plans</a></li>
           </ul>
         </nav>
+
       </div>
     </header>
 
     <!-- Main -->
     <main>
+
       <!-- Hero section -->
-      <section class="hero container">
+      <section class="hero">
         <picture class="hero__img">
           <source srcset="" media="(min-width: 768px)" type="image/webp">
           <source srcset="" media="(min-width: 768px)">
@@ -66,6 +70,7 @@
           <a href="#0" class="btn hero__btn">View plans</a>
         </div>
       </section>
+
       <!-- Section 2 -->
       <section class="section-2 container">
         <h2 class="section-2__heading">We’re different</h2>
@@ -85,11 +90,13 @@
             sure you’re covered when you need it.</p>
         </div>
       </section>
+
       <!-- Section 3 -->
       <section class="section-3 container">
         <h2 class="section-3__heading">Find out more about how we work</h2>
         <a href="#0" class="btn section-3__btn">How we work</a>
       </section>
+
     </main>
 
     <!-- Footer -->
@@ -143,6 +150,22 @@
               <li><a href="#0">Cookies</a></li>
             </ul>
           </div>
+          <div>
+            <h2>Contact</h2>
+            <ul>
+              <li><a href="#0">Sales</a></li>
+              <li><a href="#0">Support</a></li>
+              <li><a href="#0">Live chat</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Others</h2>
+            <ul>
+              <li><a href="#0">Careers</a></li>
+              <li><a href="#0">Press</a></li>
+              <li><a href="#0">Licenses</a></li>
+            </ul>
+          </div>
         </div>
         <div class="attribution">
           <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
@@ -152,17 +175,11 @@
     </footer>
   </div>
 
-  Contact
 
-  Sales
-  Support
-  Live chat
 
-  Others
 
-  Careers
-  Press
-  Licenses
+
+
 
 </body>
 

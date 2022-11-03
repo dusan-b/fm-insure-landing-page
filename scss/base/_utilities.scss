@@ -1,0 +1,20 @@
+/* For AT users only */
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.ul-fix li {
+    /* Bug: Some screen readers don't announce unordered lists when list-style-type is set to none. */
+    list-style-type: none;
+
+    &::before {
+        /* Bugfix: Add zero-width space, parent <ul> is announced with a role of list again. */
+        content: "\200B";
+    }
+}

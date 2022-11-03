@@ -28,23 +28,20 @@ button {
   padding: 0;
 }
 
-.visually-hidden {
-  position: absolute;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+h1 {
+  line-height: 0;
+  margin: 0;
 }
 
-.preview-site {
+/* For developing purposes:
+   Show the intended design when disabling display property in DevTools. */
+.preview-design {
+  display: none;
   position: absolute;
+  left: 0;
+  z-index: 1;
   width: 100%;
   height: 3000px;
-  left: 0;
-  background: url("../img/desktop-design.jpg") top center;
-  z-index: 1;
-  display: none;
-  opacity: 0.3;
+  background: url("../design/mobile-design.jpg") top center;
+  opacity: 0.5;
 }

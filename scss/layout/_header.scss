@@ -1,0 +1,15 @@
+.main-header {
+    margin-bottom: 24px;
+}
+
+.main-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px 0;
+}
+
+.logo {
+    /* Fit the size of the anchor link to that of the logo. */
+    display: inline-block;
+}
