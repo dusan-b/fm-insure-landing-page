@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+@mixin btn() {
+    display: inline-block;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+}

@@ -1,3 +1,9 @@
+@use '../abstracts' as *;
+
+.container {
+    padding-inline: 24px;
+}
+
 /* For AT users only */
 .visually-hidden {
     position: absolute;
@@ -9,12 +15,17 @@
     overflow: hidden;
 }
 
-.ul-fix li {
-    /* Bug: Some screen readers don't announce unordered lists when list-style-type is set to none. */
-    list-style-type: none;
+/* Select all classes which end with "__heading" except footer headings */
+[class$="__heading"]:not(.footer-nav__heading) {
+    font-family: $ff-heading;
+}
 
-    &::before {
-        /* Bugfix: Add zero-width space, parent <ul> is announced with a role of list again. */
-        content: "\200B";
-    }
+.cta-btn {
+    display: inline-block;
+    font-size: .875rem;
+    font-weight: 700;
+    letter-spacing: .063em;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
 }

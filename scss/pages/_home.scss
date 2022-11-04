@@ -1,0 +1,122 @@
+@use '../abstracts' as *;
+
+/* Hero section
+   ========================================================================== */
+
+.hero {
+    color: $clr-neutral-3;
+    background-color: $clr-primary-1;
+
+    &__img img {
+        width: 100%;
+    }
+
+    &__heading {
+        font-size: 3rem;
+        margin: 0 0 17px;
+    }
+
+    &__body {
+        padding: 92px 24px 92px;
+        background:
+            url("../img/bg-pattern-intro-left-mobile.svg") top left no-repeat,
+            url("../img/bg-pattern-intro-right-mobile.svg") bottom -177px right no-repeat;
+    }
+
+    &__p {
+        line-height: 1.6;
+        letter-spacing: 0.005em;
+        margin-bottom: 34px;
+    }
+
+    &__btn {
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.063em;
+        padding: 0.7143em 1.9286em 0.7143em;
+    }
+}
+
+/* Section 2
+   ========================================================================== */
+
+.section-2 {
+    margin-bottom: 141px;
+    padding-top: 182px;
+
+    &__heading {
+        font-size: 3rem;
+        margin: 0 0 79px;
+
+        &::before {
+            content: "";
+            display: block;
+            position: relative;
+            top: -41px;
+            width: 150px;
+            height: 1px;
+            margin: 0 auto;
+            background-color: #b8a2b9;
+        }
+    }
+}
+
+.card-design {
+
+    &:not(:last-child) {
+        margin-bottom: 57px;
+    }
+
+    &__heading {
+        font-size: 1.75rem;
+        margin: 37px 0 21px;
+    }
+
+    &__p {
+        color: $clr-neutral-2;
+        line-height: 1.6;
+        letter-spacing: 0.003em;
+    }
+}
+
+/* Select all classes which begin with "cd-" */
+[class*="cd-"]::before {
+    content: "";
+    display: block;
+    width: 86px;
+    height: 86px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+}
+
+.cd-1::before {
+    background-image: url("../img/icon-snappy-process.svg");
+}
+
+.cd-2::before {
+    background-image: url("../img/icon-affordable-prices.svg");
+}
+
+.cd-3::before {
+    background-image: url("../img/icon-people-first.svg");
+}
+
+/* Section 3
+   ========================================================================== */
+
+.section-3 {
+    color: $clr-neutral-3;
+    padding: 72px 0 72px;
+    background: $clr-primary-1 url("../img/bg-pattern-how-we-work-mobile.svg") top right no-repeat;
+
+    &__heading {
+        font-size: 2.5rem;
+        font-family: $ff-heading;
+        margin: 0 0 40px;
+    }
+
+    &__btn {
+        // font-size: 0.35em;
+        padding: .7143em 1.5714em .7143em;
+    }
+}
