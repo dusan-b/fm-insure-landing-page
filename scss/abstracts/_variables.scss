@@ -1,8 +1,19 @@
+/* Typography */
 $ff-body: 'Karla', sans-serif;
 $ff-heading: 'DM Serif Display', serif;
 
+/* Colors */
 $clr-primary-1: hsl(256, 26%, 20%);
 $clr-primary-2: hsl(216, 30%, 68%);
 $clr-neutral-1: hsl(270, 9%, 17%);
 $clr-neutral-2: hsl(273, 4%, 51%);
 $clr-neutral-3: hsl(0, 0%, 98%);
+
+/* Burger menu */
+$icon-menu-size: 2em;
+$line-menu-width: 1em;
+$line-menu-height: 0.125em;
+$line-menu-space: 0.1875em;
+
+/* Breakpoints */
+$desktop: 900px;

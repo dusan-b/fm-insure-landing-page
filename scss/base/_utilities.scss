@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 .container {
+    margin: 0 auto;
     padding-inline: 24px;
 }
 
@@ -15,17 +16,35 @@
     overflow: hidden;
 }
 
-/* Select all classes which end with "__heading" except footer headings */
+/* Select all classes ending with "__heading" except footer headings */
 [class$="__heading"]:not(.footer-nav__heading) {
     font-family: $ff-heading;
 }
 
 .cta-btn {
     display: inline-block;
-    font-size: .875rem;
+    font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: .063em;
     text-transform: uppercase;
     border-width: 2px;
     border-style: solid;
+}
+
+/* For developing purposes:
+   Show the intended design when disabling display property in DevTools */
+.preview-design {
+    display: none;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 3851px;
+    /*! background-image: url("../design/mobile-design.jpg"); */
+    /*! background-image: url("../design/mobile-nav-design.jpg"); */
+    background-image: url("../design/desktop-design.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
 }

@@ -1,9 +1,153 @@
-.main-nav__menu {
-    display: none;
+@use '../abstracts' as *;
+
+.main-menu-btn {
+    width: $icon-menu-size;
+    height: $icon-menu-size;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .125em solid $clr-primary-1;
+
+    @include break($desktop) {
+        display: none;
+    }
+
+    &__icon {
+
+        &,
+        &::before,
+        &::after {
+            display: block;
+            width: $line-menu-width;
+            height: $line-menu-height;
+            background-color: $clr-primary-1;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+        }
+
+        &::before {
+            transform: translateY(-1 * ($line-menu-space + $line-menu-height));
+        }
+
+        &::after {
+            transform: translateY($line-menu-space);
+        }
+
+        .is-active & {
+            height: 0;
+        }
+
+        .is-active &::before {
+            transform: translateY(-1px) rotate(45deg);
+        }
+
+        .is-active &::after {
+            transform: translateY(-3px) rotate(-45deg);
+        }
+    }
 }
 
-.main-nav__btn {
-    width: 32px;
-    height: 32px;
-    background: transparent url("../img/icon-hamburger.svg") center center no-repeat;
+.main-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    z-index: 800;
+    height: 100vh;
+    padding: 48px 24px 0;
+    background: $clr-neutral-1 url("../img/bg-pattern-mobile-nav.svg") bottom right no-repeat;
+    visibility: hidden;
+    opacity: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition-property: visibility, opacity, transform;
+    // transition: 300ms ease-in-out;
+
+    @include break($desktop) {
+        display: flex;
+        align-items: center;
+        position: static;
+        height: unset;
+        padding: 0;
+        background: transparent;
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .is-active & {
+        visibility: visible;
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 41px;
+
+        @include break($desktop) {
+            margin: 0 26px 0 0;
+        }
+    }
+
+    /* Fade in links one by one when user opens menu */
+    /* &__item:nth-child(1) &__link {
+        transition-delay: 500ms;
+    }
+
+    &__item:nth-child(2) &__link {
+        transition-delay: 700ms;
+    }
+
+    &__item:nth-child(3) &__link {
+        transition-delay: 900ms;
+    }
+
+    &__item:nth-child(4) &__link {
+        transition-delay: 1300ms;
+        transition-duration: 700ms;
+    } */
+
+    &__link {
+        display: inline-block;
+        font-size: 1.25rem;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        color: $clr-neutral-3;
+        text-transform: uppercase;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition-property: opacity, transform;
+        // transition: 400ms ease-in-out;
+
+        @include break($desktop) {
+            font-size: 0.875rem;
+            color: $clr-neutral-2;
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .is-active & {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+        &.cta-btn {
+            width: 100%;
+            margin-top: -7px;
+            padding: 14px 20px;
+
+            @include break($desktop) {
+                color: $clr-primary-1;
+                margin: 0;
+                padding: 10px 26px;
+            }
+        }
+    }
 }

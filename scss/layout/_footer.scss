@@ -63,10 +63,14 @@
     color: $clr-neutral-1;
     text-align: center;
     padding: 18px 10px 16px;
-    background-color: $clr-primary-2;
+    background-color: lighten($clr-primary-2, 20%);
 
     a {
         color: inherit;
         text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }

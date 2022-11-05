@@ -7,30 +7,88 @@
     color: $clr-neutral-3;
     background-color: $clr-primary-1;
 
+    @include break($desktop) {
+        background:
+            url("../img/bg-pattern-intro-left-desktop.svg") bottom -200px left no-repeat,
+            url("../img/bg-pattern-intro-right-desktop.svg") bottom right no-repeat;
+        background-color: $clr-primary-1;
+    }
+
+    &-inner {
+
+        @include break($desktop) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            max-height: 600px;
+            @include container;
+        }
+    }
+
+    &__img {
+
+        @include break($desktop) {
+            order: 2;
+            justify-self: end;
+            position: relative;
+            bottom: -105px;
+            width: auto;
+        }
+    }
+
     &__img img {
         width: 100%;
+
+        @include break($desktop) {
+            width: auto;
+        }
     }
 
     &__heading {
         font-size: 3rem;
         margin: 0 0 17px;
+
+        @include break($desktop) {
+            font-size: 70px;
+            letter-spacing: -0.004em;
+            line-height: 0.9;
+            margin: 0 0 30px;
+
+            &::before {
+                content: "";
+                display: block;
+                position: relative;
+                top: -64px;
+                width: 149px;
+                height: 1px;
+                background-color: $clr-neutral-3;
+            }
+        }
     }
 
     &__body {
+        order: 1;
         padding: 92px 24px 92px;
         background:
             url("../img/bg-pattern-intro-left-mobile.svg") top left no-repeat,
             url("../img/bg-pattern-intro-right-mobile.svg") bottom -177px right no-repeat;
+
+        @include break($desktop) {
+            padding: 168px 0 0;
+            background: transparent;
+        }
     }
 
     &__p {
         line-height: 1.6;
         letter-spacing: 0.005em;
         margin-bottom: 34px;
+
+        @include break($desktop) {
+            margin-bottom: 31px;
+        }
     }
 
     &__btn {
-        font-size: 0.875rem;
         font-weight: 700;
         letter-spacing: 0.063em;
         padding: 0.7143em 1.9286em 0.7143em;
@@ -116,7 +174,6 @@
     }
 
     &__btn {
-        // font-size: 0.35em;
         padding: .7143em 1.5714em .7143em;
     }
 }

@@ -1,12 +1,23 @@
-.main-header {
-    margin-bottom: 24px;
-}
+@use '../abstracts' as *;
 
-.main-header-inner {
+.main-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-top: 24px;
+    position: relative;
+    z-index: 900;
+    height: 80px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    &-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @include break($desktop) {
+            @include container
+        }
+    }
 }
 
 .logo {

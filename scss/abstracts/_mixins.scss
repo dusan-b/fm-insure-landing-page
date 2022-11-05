@@ -1,8 +1,22 @@
 @use 'variables' as *;
 
+@mixin break($width) {
+    @media screen and (min-width: $width) {
+        @content
+    }
+}
+
 @mixin btn() {
     display: inline-block;
     text-transform: uppercase;
     border-width: 2px;
     border-style: solid;
+}
+
+@mixin container() {
+    width: 1155px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-inline: 24px;
+
 }

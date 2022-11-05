@@ -21,8 +21,6 @@
 
 <body>
 
-  <div class="preview-design"></div>
-
   <div class="page">
 
     <!-- Header -->
@@ -37,14 +35,23 @@
 
         <!-- Main navigation -->
         <nav class="main-nav" aria-label="Main menu">
-          <button class="main-nav__btn" aria-expanded="false" aria-controls="menu">
-            <span class="visually-hidden">Open menu</span>
+          <button class="main-menu-btn" aria-expanded="false" aria-haspopup="menu" aria-controls="menu">
+            <span class="main-menu-btn__icon"></span>
+            <span class="visually-hidden">Open main menu</span>
           </button>
-          <ul id="menu" class="main-nav__menu">
-            <li><a class="main-nav__link" href="#0">How we work</a></li>
-            <li><a class="main-nav__link" href="#0">Blog</a></li>
-            <li><a class="main-nav__link" href="#0">Account</a></li>
-            <li><a class="main-nav__link cta-btn" href="#0">View plans</a></li>
+          <ul id="menu" class="main-menu">
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#0">How we work</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#0">Blog</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link" href="#0">Account</a>
+            </li>
+            <li class="main-menu__item">
+              <a class="main-menu__link cta-btn" href="#0">View plans</a>
+            </li>
           </ul>
         </nav>
 
@@ -56,18 +63,20 @@
 
       <!-- Hero section -->
       <section class="hero">
-        <picture class="hero__img">
-          <source srcset="" media="(min-width: 768px)" type="image/webp">
-          <source srcset="" media="(min-width: 768px)">
-          <source srcset="" media="(max-width: 767px)" type="image/webp">
-          <img src="./img/image-intro-mobile.jpg" alt="">
-        </picture>
-        <div class="hero__body">
-          <h2 class="hero__heading">Humanizing<br>your insurance.</h2>
-          <p class="hero__p">Get your life insurance coverage easier and faster. We blend our expertise and technology
-            to help you find the plan that’s right for you. Ensure you
-            and your loved ones are protected.</p>
-          <a class="hero__btn cta-btn" href="#0">View plans</a>
+        <div class="hero-inner">
+          <picture class="hero__img">
+            <source srcset="./img/image-intro-desktop.webp" media="(min-width: 376px)" type="image/webp">
+            <source srcset="./img/image-intro-desktop.jpg" media="(min-width: 376px)">
+            <source srcset="./img/image-intro-mobile.webp" media="(max-width: 375px)" type="image/webp">
+            <img src="./img/image-intro-mobile.jpg" alt="">
+          </picture>
+          <div class="hero__body">
+            <h2 class="hero__heading">Humanizing<br>your insurance.</h2>
+            <p class="hero__p">Get your life insurance coverage easier and faster. We blend our expertise and technology
+              to help you find the plan that’s right for you. Ensure you
+              and your loved ones are protected.</p>
+            <a class="hero__btn cta-btn" href="#0">View plans</a>
+          </div>
         </div>
       </section>
 
@@ -175,13 +184,12 @@
           Coded by <a href="https://www.frontendmentor.io/profile/dusan-b" target="_blank">Dusan Brankov</a>.</p>
       </div>
     </footer>
+
   </div>
 
+  <div class="preview-design"></div>
 
-
-
-
-
+  <script src='./js/main.js'></script>
 
 </body>
 
