@@ -15,11 +15,6 @@
     overflow: hidden;
 }
 
-/* Select all classes ending with "__heading" except footer headings */
-[class$="__heading"]:not(.footer-nav__heading) {
-    font-family: $ff-heading;
-}
-
 .cta-btn {
     display: inline-block;
     font-size: 0.875rem;

@@ -59,7 +59,7 @@
     right: 0;
     z-index: 800;
     height: 100vh;
-    padding: 48px 24px 0;
+    padding: 3rem 1.5rem 0;
     background: $clr-neutral-1 url("../img/bg-pattern-mobile-nav.svg") bottom right / contain no-repeat;
     visibility: hidden;
     opacity: 0;
@@ -87,13 +87,10 @@
     }
 
     &__item:not(:last-child) {
-
-        @include break-max($tablet - 0.0625em) {
-            margin-bottom: 41px;
-        }
+        margin-bottom: 2.5625rem;
 
         @include break($tablet) {
-            margin: 0 26px 0 0;
+            margin: 0 1.625rem 0 0;
         }
     }
 

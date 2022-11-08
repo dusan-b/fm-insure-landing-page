@@ -33,30 +33,30 @@
         @include break-min-max($tablet, 60.5625em) {
             order: 2;
             position: relative;
-            top: 85px;
-            padding-right: 24px;
+            top: 5.3125rem;
+            padding-right: 1.5rem;
         }
 
         @include break-min-max(60.625em, $desktop - 0.0625em) {
             order: 2;
             position: absolute;
-            top: 40px;
+            top: 2.5rem;
             right: 0;
             width: 44%;
-            padding-right: 24px;
+            padding-right: 1.5rem;
         }
 
         @include break($desktop) {
             order: 2;
             justify-self: end;
             position: absolute;
-            top: 105px;
+            top: 6.5625rem;
         }
     }
 
     &__body {
         order: 1;
-        padding: 92px 24px 92px;
+        padding: 5.75rem 1.5rem 5.75rem;
         background:
             url("../img/bg-pattern-intro-left-mobile.svg") top left no-repeat,
             url("../img/bg-pattern-intro-right-mobile.svg") bottom -177px right no-repeat;
@@ -70,24 +70,24 @@
         @include break($tablet) {
             position: relative;
             z-index: 1100;
-            padding-bottom: 72px;
+            padding-bottom: 4.5rem;
             background: transparent;
         }
 
         @include break($desktop) {
-            padding: 168px 0 127px;
+            padding: 10.5rem 0 7.9375rem;
         }
     }
 
     &__heading {
         font-size: 3rem;
-        margin: 0 0 17px;
+        margin: 0 0 1.0625rem;
 
-        @include break(870px) {
+        @include break(54.375em) {
             font-size: 3.5rem;
             letter-spacing: -0.004em;
             line-height: 0.9;
-            margin: 0 0 30px;
+            margin: 0 0 1.875rem;
         }
 
         @include break($desktop) {
@@ -97,9 +97,9 @@
                 content: "";
                 display: block;
                 position: relative;
-                top: -64px;
-                width: 149px;
-                height: 1px;
+                top: -4rem;
+                width: 9.3125rem;
+                height: 0.0625rem;
                 background-color: $clr-neutral-3;
             }
         }
@@ -108,18 +108,16 @@
     &__p {
         line-height: 1.6;
         letter-spacing: 0.005em;
-        margin-bottom: 34px;
+        margin-bottom: 2.125rem;
 
         @include break($desktop) {
-            margin-bottom: 31px;
+            margin-bottom: 1.9375rem;
         }
     }
 
     &__btn {
         position: relative;
         z-index: 700;
-        font-weight: 700;
-        letter-spacing: 0.063em;
         padding: 0.7143em 1.9286em 0.7143em;
         border-color: $clr-neutral-3;
         transition: $transition-btn;
@@ -148,7 +146,7 @@
         @include break($desktop) {
             background:
                 url("../img/bg-pattern-intro-left-desktop.svg") bottom 18px left no-repeat,
-                url("../img/bg-pattern-intro-right-desktop.svg") top -80px right 0px no-repeat;
+                url("../img/bg-pattern-intro-right-desktop.svg") top -80px right no-repeat;
         }
     }
 }
@@ -157,55 +155,55 @@
    ========================================================================== */
 
 .section-2 {
-    margin-bottom: 141px;
-    padding-top: 182px;
+    margin-bottom: 8.8125rem;
+    padding-top: 11.375rem;
 
     @include break($tablet) {
         display: grid;
         grid-template-areas:
             "heading    heading     heading"
             "cd-1       cd-2        cd-3";
-        grid-gap: 0 24px;
+        grid-gap: 0 1.5rem;
         position: relative;
         z-index: 1100;
     }
 
     @include break($desktop) {
-        grid-gap: 0 6px;
-        margin-bottom: 160px;
-        padding-top: 366px;
+        grid-gap: 0 0.375rem;
+        margin-bottom: 10rem;
+        padding-top: 22.875rem;
     }
 
     &__heading {
         font-size: 3rem;
-        margin: 0 0 79px;
+        margin: 0 0 4.9375rem;
 
         @include break($tablet) {
             grid-area: heading;
         }
 
-        @include break(900px) {
+        @include break(56.25em) {
             font-size: 3.5rem;
         }
 
         @include break($desktop) {
             font-size: 4.375rem;
             letter-spacing: -0.003em;
-            margin-bottom: 92px;
+            margin-bottom: 5.75rem;
         }
 
         &::before {
             content: "";
             display: block;
             position: relative;
-            top: -41px;
-            width: 150px;
-            height: 1px;
+            top: -2.5625rem;
+            width: 9.375rem;
+            height: .0625rem;
             margin: 0 auto;
             background-color: #b8a2b9;
 
             @include break($tablet) {
-                top: -61px;
+                top: -3.8125rem;
                 margin: 0;
             }
         }
@@ -224,7 +222,7 @@
     }
 
     &:not(:last-child) {
-        margin-bottom: 57px;
+        margin-bottom: 3.5625rem;
 
         @include break($tablet) {
             margin: 0;
@@ -237,7 +235,7 @@
 
     &__heading {
         font-size: 1.75rem;
-        margin: 33px 0 21px;
+        margin: 2.0625rem 0 1.3125rem;
     }
 
     &__p {
@@ -284,7 +282,7 @@
     &__heading {
         font-size: 2.5rem;
         font-family: $ff-heading;
-        margin: 0 0 40px;
+        margin: 0 0 2.5rem;
 
         @include break($tablet) {
             margin: 0;

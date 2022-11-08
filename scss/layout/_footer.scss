@@ -5,34 +5,30 @@
     background: $clr-neutral-3 url("../img/bg-pattern-footer-mobile.svg") top left no-repeat;
 
     @include break-min-max($mobile + 0.0625em, $desktop - 0.0625em) {
-        background-position: 0 -60px;
-        padding-top: 64px;
-    }
-
-    @include break($tablet) {
-        background-position: 0 -60px;
-        padding-top: 64px;
+        padding-top: 4rem;
+        background-position: 0 -3.75rem;
     }
 
     @include break($desktop) {
+        padding-top: 4rem;
         background: $clr-neutral-3 url("../img/bg-pattern-footer-desktop.svg") top left no-repeat;
     }
 
     &__logo {
-        margin-bottom: 40px;
-        padding-bottom: 37px;
+        margin-bottom: 2.5rem;
+        padding-bottom: 2.5625rem;
         border-bottom: 0.0625rem solid $clr-neutral-2;
 
         @include break($tablet) {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 47px;
-            padding-bottom: 30px;
+            margin-bottom: 2.9375rem;
+            padding-bottom: 2.125rem;
         }
 
         &-img {
-            margin-bottom: 29px;
+            margin-bottom: 1.8125rem;
 
             @include break($tablet) {
                 margin: 0;
@@ -46,7 +42,10 @@
         align-items: center;
 
         &__icon {
-            margin-inline: 8px;
+            /* Remove whitespace below SVG icon */
+            line-height: 0;
+
+            margin-inline: 0.5rem;
 
             & svg {
                 fill: $clr-icon-social;
@@ -68,16 +67,16 @@
 }
 
 .footer-nav {
-    margin-bottom: 88px;
+    margin-bottom: 5.5rem;
 
     @include break($tablet) {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-gap: 0 30px;
+        grid-gap: 0 1.875rem;
     }
 
     &__container:not(:last-child) {
-        margin-bottom: 41px;
+        margin-bottom: 2.5625rem;
     }
 
     &__heading, &__link {
@@ -89,11 +88,11 @@
     &__heading {
         color: $clr-neutral-2;
         letter-spacing: 0.06em;
-        margin: 0 0 34px;
+        margin: 0 0 2.4286em;
     }
 
     li:not(:last-child) {
-        margin-bottom: 12px;
+        margin-bottom: 0.75rem;
     }
 
     &__link {

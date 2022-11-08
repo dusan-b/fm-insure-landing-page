@@ -3,15 +3,8 @@
 @mixin container() {
     width: min(100%, 72.375rem);
     margin: 0 auto;
-    padding-inline: 24px;
+    padding-inline: 1.5rem;
 
-}
-
-@mixin btn() {
-    display: inline-block;
-    text-transform: uppercase;
-    border-width: 2px;
-    border-style: solid;
 }
 
 /* Breakpoints */
