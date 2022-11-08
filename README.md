@@ -26,7 +26,7 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
 
 ## What I learned
 
-While working on this project, I was able to expand my knowledge on how to make websites faster and more accessible. Among other things, I used the Firefox Dev Tools and Lighthouse more actively for this, which gave me a better understanding of how to improve the quality of my built web sites.
+While working on this project, I was able to expand my knowledge on how to make websites faster and more accessible. Among other things, I used the Firefox Dev Tools and Lighthouse more actively for this, which gave me a better understanding of how to improve the quality of my built websites.
 
 ### Inline SVG
 
