@@ -1,9 +1,10 @@
 @use 'variables' as *;
 
-@mixin break($width) {
-    @media screen and (min-width: $width) {
-        @content
-    }
+@mixin container() {
+    width: min(100%, 72.375rem);
+    margin: 0 auto;
+    padding-inline: 24px;
+
 }
 
 @mixin btn() {
@@ -13,10 +14,22 @@
     border-style: solid;
 }
 
-@mixin container() {
-    width: 1155px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding-inline: 24px;
+/* Breakpoints */
 
+@mixin break($width) {
+    @media screen and (min-width: $width) {
+        @content
+    }
+}
+
+@mixin break-max($width) {
+    @media screen and (max-width: $width) {
+        @content
+    }
+}
+
+@mixin break-min-max($min-width, $max-width) {
+    @media screen and (min-width: $min-width) and (max-width: $max-width) {
+        @content
+    }
 }
