@@ -40,11 +40,11 @@ I also figured out how to make SVG images accessible to assistive technologies. 
 
 To allow the two background images in the hero section to break out of their parent element, like in the original design, I came up with the solution of creating a separate `<div>` with the respective background images, setting `position` to `absolute` and specifying negative values for `bottom`. I think it's a bit of a hacky approach, but it works and doesn't affect the funcionality of the web page.
 
-### Other things I have practiced and applied
+### Other aspects I have practiced and used
 
 - Appropriate use of the `aria-label` and `aria-labelledby` attributes
 - A design based focus outline for keyboard users with a complementary color scheme
-- Animated mobile menu with using `transform` and `transition-delay`
+- Animated mobile menu using `transform` and `transition-delay`
 
 ## Useful resources
 
