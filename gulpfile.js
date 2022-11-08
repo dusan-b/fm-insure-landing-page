@@ -7,7 +7,7 @@ const browserSync = require('browser-sync').create();
 function buildStyles() {
     return gulp.src('./scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(prefix('>0.3%, defaults'))
+        .pipe(prefix('>0.3%, last 4 versions'))
         .pipe(minify())
         .pipe(gulp.dest('./css'))
         .pipe(browserSync.stream());
