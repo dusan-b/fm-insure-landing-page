@@ -27,6 +27,15 @@
             padding-bottom: 2.125rem;
         }
 
+        &-container {
+            width: 7rem;
+            margin: 0 auto;
+
+            @include break($tablet) {
+                margin: 0;
+            }
+        }
+
         &-img {
             margin-bottom: 1.8125rem;
 
@@ -42,6 +51,7 @@
         align-items: center;
 
         &__icon {
+            width: 1.5rem;
             /* Remove whitespace below SVG icon */
             line-height: 0;
 
