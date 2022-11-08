@@ -9,7 +9,7 @@
     align-items: center;
     border: .125em solid $clr-primary-1;
 
-    @include break($desktop) {
+    @include break($tablet) {
         display: none;
     }
 
@@ -27,6 +27,7 @@
         &::before,
         &::after {
             content: "";
+            transition: transform 400ms ease;
         }
 
         &::before {
@@ -53,21 +54,21 @@
 
 .main-menu {
     position: absolute;
-    top: 80px;
+    top: 5em;
     left: 0;
     right: 0;
     z-index: 800;
     height: 100vh;
     padding: 48px 24px 0;
-    background: $clr-neutral-1 url("../img/bg-pattern-mobile-nav.svg") bottom right no-repeat;
+    background: $clr-neutral-1 url("../img/bg-pattern-mobile-nav.svg") bottom right / contain no-repeat;
     visibility: hidden;
     opacity: 0;
     transform-origin: top;
     transform: scaleY(0);
+    transition: 300ms ease-in-out;
     transition-property: visibility, opacity, transform;
-    // transition: 300ms ease-in-out;
 
-    @include break($desktop) {
+    @include break($tablet) {
         display: flex;
         align-items: center;
         position: static;
@@ -86,30 +87,36 @@
     }
 
     &__item:not(:last-child) {
-        margin-bottom: 41px;
 
-        @include break($desktop) {
+        @include break-max($tablet - 0.0625em) {
+            margin-bottom: 41px;
+        }
+
+        @include break($tablet) {
             margin: 0 26px 0 0;
         }
     }
 
-    /* Fade in links one by one when user opens menu */
-    /* &__item:nth-child(1) &__link {
-        transition-delay: 500ms;
-    }
+    @include break-max($tablet - 0.0625em) {
 
-    &__item:nth-child(2) &__link {
-        transition-delay: 700ms;
-    }
+        /* Fade in links one by one when user opens menu */
+        &__item:nth-child(1) &__link {
+            transition-delay: 500ms;
+        }
 
-    &__item:nth-child(3) &__link {
-        transition-delay: 900ms;
-    }
+        &__item:nth-child(2) &__link {
+            transition-delay: 800ms;
+        }
 
-    &__item:nth-child(4) &__link {
-        transition-delay: 1300ms;
-        transition-duration: 700ms;
-    } */
+        &__item:nth-child(3) &__link {
+            transition-delay: 1100ms;
+        }
+
+        &__item:nth-child(4) &__link {
+            transition-duration: 700ms;
+            transition-delay: 1600ms;
+        }
+    }
 
     &__link {
         display: inline-block;
@@ -121,32 +128,46 @@
         visibility: hidden;
         opacity: 0;
         transform: translateY(-10px);
+        transition: 400ms ease-in-out;
         transition-property: opacity, transform;
-        // transition: 400ms ease-in-out;
 
-        @include break($desktop) {
+        @include break($tablet) {
             font-size: 0.875rem;
             color: $clr-neutral-2;
             visibility: visible;
             opacity: 1;
             transform: translateY(0);
+            transition: color $transition-smooth;
+
+            &:hover {
+                color: $clr-neutral-1;
+            }
         }
 
         .is-active & {
             visibility: visible;
             opacity: 1;
-            transform: translateY(0px);
+            transform: translateY(0);
         }
 
         &.cta-btn {
             width: 100%;
             margin-top: -7px;
-            padding: 14px 20px;
+            padding: 0.7em 1em;
+            border-color: $clr-neutral-3;
 
-            @include break($desktop) {
-                color: $clr-primary-1;
+            @include break($tablet) {
+                color: $clr-neutral-1;
                 margin: 0;
-                padding: 10px 26px;
+                padding: 0.7143em 1.8571em;
+                border-color: $clr-neutral-1;
+                transition: $transition-btn;
+                transition-property: color, background-color;
+            }
+
+            &:hover {
+                color: $clr-neutral-3;
+                background-color: $clr-neutral-1;
             }
         }
     }

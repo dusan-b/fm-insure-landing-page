@@ -10,10 +10,10 @@ html {
   box-sizing: inherit;
 }
 
-::selection {
+/* ::selection {
   color: $clr-neutral-3;
-  background-color: $clr-primary-2;
-}
+  background-color: $clr-neutral-2;
+} */
 
 body {
   font-family: $ff-body;
@@ -22,7 +22,7 @@ body {
   text-align: center;
   color: $clr-primary-1;
 
-  @include break($desktop) {
+  @include break($tablet) {
     text-align: left;
   }
 
@@ -41,21 +41,8 @@ p {
   margin: 0;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: top;
-}
-
-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
 h1 {
-  /* Prevent h1 to be greater than its content */
+  /* Prevent h1 from being larger than its content */
   line-height: 0;
   margin: 0;
 }
@@ -87,6 +74,40 @@ ul {
   }
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  /* Remove whitespace below images */
+  vertical-align: top;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
 main {
   margin-bottom: 140px;
+
+  @include break($desktop) {
+    margin-bottom: 150px;
+  }
+}
+
+/* For developing purposes:
+   Show the intended design when disabling display property in DevTools */
+.preview-design {
+  display: none;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 3851px;
+  background-image: url("../design/desktop-design.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
 }

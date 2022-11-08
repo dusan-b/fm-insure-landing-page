@@ -5,22 +5,19 @@
     align-items: center;
     position: relative;
     z-index: 900;
-    height: 80px;
+    height: 5em;
+    background-color: $clr-neutral-3;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
     &-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
-
-        @include break($desktop) {
-            @include container
-        }
     }
 }
 
 .logo {
     /* Fit the size to that of the logo image. */
     display: inline-block;
+    width: 7rem;
 }

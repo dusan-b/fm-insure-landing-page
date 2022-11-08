@@ -7,61 +7,50 @@
     color: $clr-neutral-3;
     background-color: $clr-primary-1;
 
-    @include break($desktop) {
-        background:
-            url("../img/bg-pattern-intro-left-desktop.svg") bottom -200px left no-repeat,
-            url("../img/bg-pattern-intro-right-desktop.svg") bottom right no-repeat;
+    @include break($tablet) {
+        position: relative;
         background-color: $clr-primary-1;
     }
 
     &-inner {
 
-        @include break($desktop) {
+        @include break($tablet) {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            max-height: 600px;
+        }
+
+        @include break($desktop) {
             @include container;
         }
     }
 
     &__img {
 
+        @include break-min-max(33.8125em, $tablet - 0.0625em) {
+            display: none;
+        }
+
+        @include break-min-max($tablet, 60.5625em) {
+            order: 2;
+            position: relative;
+            top: 85px;
+            padding-right: 24px;
+        }
+
+        @include break-min-max(60.625em, $desktop - 0.0625em) {
+            order: 2;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: 44%;
+            padding-right: 24px;
+        }
+
         @include break($desktop) {
             order: 2;
             justify-self: end;
-            position: relative;
-            bottom: -105px;
-            width: auto;
-        }
-    }
-
-    &__img img {
-        width: 100%;
-
-        @include break($desktop) {
-            width: auto;
-        }
-    }
-
-    &__heading {
-        font-size: 3rem;
-        margin: 0 0 17px;
-
-        @include break($desktop) {
-            font-size: 70px;
-            letter-spacing: -0.004em;
-            line-height: 0.9;
-            margin: 0 0 30px;
-
-            &::before {
-                content: "";
-                display: block;
-                position: relative;
-                top: -64px;
-                width: 149px;
-                height: 1px;
-                background-color: $clr-neutral-3;
-            }
+            position: absolute;
+            top: 105px;
         }
     }
 
@@ -72,9 +61,47 @@
             url("../img/bg-pattern-intro-left-mobile.svg") top left no-repeat,
             url("../img/bg-pattern-intro-right-mobile.svg") bottom -177px right no-repeat;
 
-        @include break($desktop) {
-            padding: 168px 0 0;
+        @include break-min-max(33.8125em, $tablet - 0.0625em) {
+            background:
+                linear-gradient(rgba(45, 38, 64, 0.85), rgba(45, 38, 64, 0.85)),
+                url(../img/image-intro-desktop.jpg) center / cover no-repeat;
+        }
+
+        @include break($tablet) {
+            position: relative;
+            z-index: 1100;
+            padding-bottom: 72px;
             background: transparent;
+        }
+
+        @include break($desktop) {
+            padding: 168px 0 127px;
+        }
+    }
+
+    &__heading {
+        font-size: 3rem;
+        margin: 0 0 17px;
+
+        @include break(870px) {
+            font-size: 3.5rem;
+            letter-spacing: -0.004em;
+            line-height: 0.9;
+            margin: 0 0 30px;
+        }
+
+        @include break($desktop) {
+            font-size: 4.375rem;
+
+            &::before {
+                content: "";
+                display: block;
+                position: relative;
+                top: -64px;
+                width: 149px;
+                height: 1px;
+                background-color: $clr-neutral-3;
+            }
         }
     }
 
@@ -89,9 +116,40 @@
     }
 
     &__btn {
+        position: relative;
+        z-index: 700;
         font-weight: 700;
         letter-spacing: 0.063em;
         padding: 0.7143em 1.9286em 0.7143em;
+        border-color: $clr-neutral-3;
+        transition: $transition-btn;
+        transition-property: color, background-color;
+
+        &:hover {
+            color: $clr-neutral-1;
+            background-color: $clr-neutral-3;
+        }
+    }
+
+    &__bg-pattern {
+
+        @include break($tablet) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: -350px;
+            left: 0;
+            z-index: 1000;
+            background:
+                url("../img/bg-pattern-intro-left-mobile.svg") top left no-repeat,
+                url("../img/bg-pattern-intro-right-mobile.svg") top right no-repeat;
+        }
+
+        @include break($desktop) {
+            background:
+                url("../img/bg-pattern-intro-left-desktop.svg") bottom 18px left no-repeat,
+                url("../img/bg-pattern-intro-right-desktop.svg") top -80px right 0px no-repeat;
+        }
     }
 }
 
@@ -102,9 +160,39 @@
     margin-bottom: 141px;
     padding-top: 182px;
 
+    @include break($tablet) {
+        display: grid;
+        grid-template-areas:
+            "heading    heading     heading"
+            "cd-1       cd-2        cd-3";
+        grid-gap: 0 24px;
+        position: relative;
+        z-index: 1100;
+    }
+
+    @include break($desktop) {
+        grid-gap: 0 6px;
+        margin-bottom: 160px;
+        padding-top: 366px;
+    }
+
     &__heading {
         font-size: 3rem;
         margin: 0 0 79px;
+
+        @include break($tablet) {
+            grid-area: heading;
+        }
+
+        @include break(900px) {
+            font-size: 3.5rem;
+        }
+
+        @include break($desktop) {
+            font-size: 4.375rem;
+            letter-spacing: -0.003em;
+            margin-bottom: 92px;
+        }
 
         &::before {
             content: "";
@@ -115,19 +203,41 @@
             height: 1px;
             margin: 0 auto;
             background-color: #b8a2b9;
+
+            @include break($tablet) {
+                top: -61px;
+                margin: 0;
+            }
         }
     }
 }
 
 .card-design {
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include break($tablet) {
+        display: block;
+    }
+
     &:not(:last-child) {
         margin-bottom: 57px;
+
+        @include break($tablet) {
+            margin: 0;
+        }
+    }
+
+    &__icon {
+        width: 5.375rem;
     }
 
     &__heading {
         font-size: 1.75rem;
-        margin: 37px 0 21px;
+        margin: 33px 0 21px;
     }
 
     &__p {
@@ -137,26 +247,22 @@
     }
 }
 
-/* Select all classes which begin with "cd-" */
-[class*="cd-"]::before {
-    content: "";
-    display: block;
-    width: 86px;
-    height: 86px;
-    margin: 0 auto;
-    background-repeat: no-repeat;
+.cd-1 {
+    @include break($tablet) {
+        grid-area: cd-1;
+    }
 }
 
-.cd-1::before {
-    background-image: url("../img/icon-snappy-process.svg");
+.cd-2 {
+    @include break($tablet) {
+        grid-area: cd-2;
+    }
 }
 
-.cd-2::before {
-    background-image: url("../img/icon-affordable-prices.svg");
-}
-
-.cd-3::before {
-    background-image: url("../img/icon-people-first.svg");
+.cd-3 {
+    @include break($tablet) {
+        grid-area: cd-3;
+    }
 }
 
 /* Section 3
@@ -164,16 +270,44 @@
 
 .section-3 {
     color: $clr-neutral-3;
-    padding: 72px 0 72px;
+    padding: 72px 24px 72px;
     background: $clr-primary-1 url("../img/bg-pattern-how-we-work-mobile.svg") top right no-repeat;
+
+    @include break($tablet) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 69px 78px 69px 81px;
+        background: $clr-primary-1 url("../img/bg-pattern-how-we-work-desktop.svg") top right no-repeat;
+    }
 
     &__heading {
         font-size: 2.5rem;
         font-family: $ff-heading;
         margin: 0 0 40px;
+
+        @include break($tablet) {
+            margin: 0;
+        }
+
+        @include break(900px) {
+            font-size: 2.8rem;
+        }
+
+        @include break($desktop) {
+            font-size: 3.5rem;
+        }
     }
 
     &__btn {
-        padding: .7143em 1.5714em .7143em;
+        padding: 0.7143em 1.5714em 0.7143em;
+        border-color: $clr-neutral-3;
+        transition: $transition-btn;
+        transition-property: color, background-color;
+
+        &:hover {
+            color: $clr-neutral-1;
+            background-color: $clr-neutral-3;
+        }
     }
 }
