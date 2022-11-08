@@ -26,10 +26,7 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
 
 ## What I learned
 
-**While working on this project, I was able to expand my knowledge on how to make websites faster and more accessible. Among other things, I used the Firefox Dev Tools and Lighthouse more actively for this, which gave me a better understanding of how to improve the quality of my built web sites.**
-
-- Appropriate use of the `aria-label` and `aria-labelledby` attributes
-- A design based focus outline for keyboard users with a complementary color scheme
+While working on this project, I was able to expand my knowledge on how to make websites faster and more accessible. Among other things, I used the Firefox Dev Tools and Lighthouse more actively for this, which gave me a better understanding of how to improve the quality of my built web sites.
 
 ### Inline SVG
 
@@ -42,6 +39,12 @@ I also figured out how to make SVG images accessible to assistive technologies. 
 ### Background overflow
 
 To allow the two background images in the hero section to break out of their parent element, like in the original design, I came up with the solution of creating a separate `<div>` with the respective background images, setting `position` to `absolute` and specifying negative values for `bottom`. I think it's a bit of a hacky approach, but it works and doesn't affect the funcionality of the web page.
+
+### Other things I have learned and applied
+
+- Appropriate use of the `aria-label` and `aria-labelledby` attributes
+- A design based focus outline for keyboard users with a complementary color scheme
+- Animated mobile menu with use of `transform` and `transition-delay`
 
 ## Useful resources
 
