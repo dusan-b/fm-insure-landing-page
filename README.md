@@ -12,7 +12,7 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
 
 ## Preview site
 
-:computer: <https://dusan-b.github.io/fm-insure-landig-page/>
+:computer: <https://dusan-b.github.io/fm-insure-landing-page/>
 
 ## Built with
 
@@ -24,9 +24,9 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
 - Mobile-first workflow
 - JavaScript
 
-## What I learned
+## Work process
 
-While working on this project, I was able to expand my knowledge on how to make websites faster and more accessible. Among other things, I used the Firefox Dev Tools and Lighthouse more actively for this, which gave me a better understanding of how to improve the quality of my built websites.
+While working on this project, I was able to expand my knowledge on how to make websites faster and more accessible. Among other things, I used the Firefox Dev Tools and Lighthouse more actively, which gave me a better understanding of how to improve the quality of my built websites.
 
 ### Inline SVG
 
@@ -40,7 +40,7 @@ I also figured out how to make SVG images accessible to assistive technologies. 
 
 To allow the two background images in the hero section to break out of their parent element, like in the original design, I came up with the solution of creating a separate `<div>` with the respective background images, setting `position` to `absolute` and specifying negative values for `bottom`. I think it's a bit of a hacky approach, but it works and doesn't affect the funcionality of the web page.
 
-### Other aspects I have practiced and used
+### Other approaches I have used
 
 - Appropriate use of the `aria-label` and `aria-labelledby` attributes
 - A design based focus outline for keyboard users with a complementary color scheme
