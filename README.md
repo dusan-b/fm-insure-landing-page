@@ -17,7 +17,7 @@ This is a solution to the [Insure landing page challenge on Frontend Mentor](htt
 ## Built with
 
 - Semantic HTML5 markup
-- SASS/SCSS
+- Sass
 - Flexbox and Grid
 - BEM
 - WebP images with fallbacks
