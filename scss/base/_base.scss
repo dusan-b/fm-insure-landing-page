@@ -74,16 +74,18 @@ ul {
 
   li {
     /* Bug:
-     Some screen readers don't announce unordered lists when list-style-type is set to none */
+     * Some screen readers don't announce unordered lists when list-style-type is set to none */
     list-style-type: none;
 
     &::before {
       /* Bugfix:
-         Add zero-width space, parent <ul> is announced with a role of list again */
+       * Add zero-width space, parent <ul> is announced with a role of list again */
       content: "\200B";
-      /* Prevent the added zero-width space from affecting the layout */
+      /* 1. Prevent the added zero-width space from affecting the layout */
       display: block;
+      /* 1 */
       height: 0;
+      /* 1 */
     }
   }
 }
@@ -91,15 +93,16 @@ ul {
 img {
   max-width: 100%;
   height: auto;
-  /* Remove whitespace below images */
+  /* 1. Remove whitespace below images */
   vertical-align: top;
+  /* 1 */
 }
 
 button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
   padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 main {
