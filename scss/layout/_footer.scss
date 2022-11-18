@@ -1,137 +1,142 @@
 @use '../abstracts' as *;
 
 .page-footer {
-    padding-top: 88px;
-    background: $clr-neutral-3 url("../img/bg-pattern-footer-mobile.svg") top left no-repeat;
+  padding-top: 88px;
+  background: $clr-neutral-3 url("../img/bg-pattern-footer-mobile.svg") top left no-repeat;
 
-    @include break-min-max($mobile + 0.0625em, $desktop - 0.0625em) {
-        padding-top: 4rem;
-        background-position: 0 -3.75rem;
+  @include break-min-max($mobile + 0.0625em, $desktop - 0.0625em) {
+    padding-top: 4rem;
+    background-position: 0 -3.75rem;
+  }
+
+  @include break($desktop) {
+    padding-top: 4rem;
+    background: $clr-neutral-3 url("../img/bg-pattern-footer-desktop.svg") top left no-repeat;
+  }
+
+  &__logo {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5625rem;
+    border-bottom: 0.0625rem solid $clr-neutral-2;
+
+    @include break($tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2.9375rem;
+      padding-bottom: 2.125rem;
     }
 
-    @include break($desktop) {
-        padding-top: 4rem;
-        background: $clr-neutral-3 url("../img/bg-pattern-footer-desktop.svg") top left no-repeat;
+    &-container {
+      width: 7rem;
+      margin: 0 auto;
+
+      @include break($tablet) {
+        margin: 0;
+      }
     }
 
-    &__logo {
-        margin-bottom: 2.5rem;
-        padding-bottom: 2.5625rem;
-        border-bottom: 0.0625rem solid $clr-neutral-2;
+    &-img {
+      margin-bottom: 1.8125rem;
 
-        @include break($tablet) {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.9375rem;
-            padding-bottom: 2.125rem;
-        }
+      @include break($tablet) {
+        margin: 0;
+      }
+    }
+  }
 
-        &-container {
-            width: 7rem;
-            margin: 0 auto;
+  .social {
+    display: flex;
+    justify-content: center;
 
-            @include break($tablet) {
-                margin: 0;
-            }
-        }
-
-        &-img {
-            margin-bottom: 1.8125rem;
-
-            @include break($tablet) {
-                margin: 0;
-            }
-        }
+    &__list {
+      display: flex;
+      align-items: center;
     }
 
-    .social {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    &__icon {
+      display: block;
+      width: 1.5rem;
+      /* Remove whitespace below SVG icon */
+      line-height: 0;
 
-        &__icon {
-            width: 1.5rem;
-            /* Remove whitespace below SVG icon */
-            line-height: 0;
+      margin-inline: 0.5rem;
 
-            margin-inline: 0.5rem;
+      & svg {
+        fill: $clr-icon-social;
+        transition: fill $transition-smooth;
 
-            & svg {
-                fill: $clr-icon-social;
-                transition: fill $transition-smooth;
-
-                &:hover {
-                    fill: $clr-neutral-1;
-                }
-            }
-
-            &:last-child {
-
-                @include break($desktop) {
-                    margin-right: 0;
-                }
-            }
+        &:hover {
+          fill: $clr-neutral-1;
         }
+      }
+
+      &:last-child {
+
+        @include break($desktop) {
+          margin-right: 0;
+        }
+      }
     }
+  }
 }
 
 .footer-nav {
-    margin-bottom: 5.5rem;
+  margin-bottom: 5.5rem;
 
-    @include break($tablet) {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-gap: 0 1.875rem;
+  @include break($tablet) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0 1.875rem;
+  }
+
+  &__container:not(:last-child) {
+    margin-bottom: 2.5625rem;
+  }
+
+  &__heading, &__link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    color: $clr-neutral-2;
+    letter-spacing: 0.06em;
+    margin: 0 0 2.4286em;
+  }
+
+  li:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  &__link {
+    color: $clr-neutral-1;
+    letter-spacing: 0.08em;
+    border-bottom: 0.0714em solid transparent;
+    transition: border-color $transition-smooth;
+
+    &:hover {
+      border-color: currentColor;
     }
-
-    &__container:not(:last-child) {
-        margin-bottom: 2.5625rem;
-    }
-
-    &__heading, &__link {
-        font-size: 0.875rem;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
-
-    &__heading {
-        color: $clr-neutral-2;
-        letter-spacing: 0.06em;
-        margin: 0 0 2.4286em;
-    }
-
-    li:not(:last-child) {
-        margin-bottom: 0.75rem;
-    }
-
-    &__link {
-        color: $clr-neutral-1;
-        letter-spacing: 0.08em;
-        border-bottom: 0.0714em solid transparent;
-        transition: border-color $transition-smooth;
-
-        &:hover {
-            border-color: currentColor;
-        }
-    }
+  }
 }
 
 .attribution {
-    font-size: 0.6875rem;
-    letter-spacing: 0.02em;
-    color: $clr-neutral-1;
-    text-align: center;
-    padding: 1.6364em 0.9091em 1.4545em;
-    background-color: lighten($clr-primary-2, 20%);
+  font-size: 0.6875rem;
+  letter-spacing: 0.02em;
+  color: $clr-neutral-1;
+  text-align: center;
+  padding: 1.6364em 0.9091em 1.4545em;
+  background-color: lighten($clr-primary-2, 20%);
 
-    &__link {
-        color: inherit;
-        border-bottom: 0.0909em solid currentColor;
-        transition: background-color $transition-smooth;
+  &__link {
+    color: inherit;
+    border-bottom: 0.0909em solid currentColor;
+    transition: background-color $transition-smooth;
 
-        &:hover {
-            background-color: lighten($clr-primary-2, 27%);
-        }
+    &:hover {
+      background-color: lighten($clr-primary-2, 27%);
     }
+  }
 }

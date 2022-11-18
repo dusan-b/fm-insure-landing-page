@@ -1,23 +1,23 @@
 @use '../abstracts' as *;
 
 .main-header {
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 900;
-    height: 5em;
-    background-color: $clr-neutral-3;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 900;
+  height: 5em;
+  background-color: $clr-neutral-3;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-    &-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .logo {
-    /* Fit the size to that of the logo image. */
-    display: inline-block;
-    width: 7rem;
+  /* Fit the size to that of the logo image. */
+  line-height: 0;
+  width: 7rem;
 }
